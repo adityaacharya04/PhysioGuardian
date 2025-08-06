@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Physiotherapy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Physiotherapy</h1>
+        <p>Your personal guide to correct posture and effective exercise.</p>
+    </header>
+    <main>
+        <div id="main-container">
+            <div id="age-groups">
+                <h2>Select Your Age Group</h2>
+                <p>This will help us tailor the exercises for you.</p>
+                <button class="age-group-btn" data-age-group="1">10-18 years</button>
+                <button class="age-group-btn" data-age-group="2">18-60 years</button>
+                <button class="age-group-btn" data-age-group="3">Above 60 years</button>
+            </div>
+            <div id="exercise-selection" class="hidden">
+                <h2>Select an Exercise</h2>
+                <div id="exercises"></div>
+            </div>
+        </div>
+        <div id="exercise-container" class="hidden">
+            <div id="video-container">
+                <video id="webcam" autoplay playsinline muted></video>
+                <canvas id="output"></canvas>
+            </div>
+            <div id="instructions-container">
+                <h3 id="exercise-name"></h3>
+                <p id="exercise-instructions"></p>
+                <div id="feedback"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <script src="posture-correction.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
