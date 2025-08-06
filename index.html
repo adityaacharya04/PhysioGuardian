@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioGuardian</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>PhysioGuardian</h1>
+        <nav>
+            <a href="#exercises">Exercises</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#progress">Progress</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+    </header>
+    <main>
+        <section id="exercises">
+            <h2>Posture Correction Exercises</h2>
+            <div id="age-groups">
+                <h3>Select Your Age Group</h3>
+                <button class="age-group-btn" data-age-group="1">10-18</button>
+                <button class="age-group-btn" data-age-group="2">18-60</button>
+                <button class="age-group-btn" data-age-group="3">Above 60</button>
+            </div>
+            <div id="exercise-selection" class="hidden">
+                <h3>Select an Exercise</h3>
+                <div id="exercise-buttons"></div>
+            </div>
+            <div id="exercise-area" class="hidden">
+                <video id="webcam" autoplay playsinline muted></video>
+                <canvas id="output"></canvas>
+                <div id="feedback"></div>
+                <button id="mark-complete-btn" class="exercise-btn">Mark as Complete</button>
+            </div>
+        </section>
+        <section id="tutorials" class="hidden">
+            <h2>Exercise Video Tutorials</h2>
+            <div id="video-tutorials"></div>
+        </section>
+        <section id="progress" class="hidden">
+            <h2>Progress Tracker</h2>
+            <div id="progress-tracker"></div>
+        </section>
+        <section id="faq" class="hidden">
+            <h2>Frequently Asked Questions</h2>
+            <div id="faq-section"></div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <script src="script.js"></script>
+</body>
+</html>
